@@ -30,7 +30,7 @@ public class PostController {
   //     return "posts/postForm";
   // }
 
-  @PostMapping("/posts")
+@PostMapping("/posts")
   public String savePost(@ModelAttribute("postForm") PostForm form){
     PostEntity post = new PostEntity();
     post.setContent(form.getContent());
