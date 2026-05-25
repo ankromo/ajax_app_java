@@ -1,4 +1,4 @@
-rom gradle:8.14-jdk21 AS build
+FROM gradle:8.14-jdk21 AS build
 WORKDIR /app
 COPY . .
 RUN gradle clean build -x test
