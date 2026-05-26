@@ -32,7 +32,7 @@ public class SecurityConfig {
   @Bean
   public UserDetailsService userDetailsService(PasswordEncoder encoder){
     String username = System.getenv("BASIC_AUTH_USER");
-    String password =System.getenv("BASIC_aUTH_PASSWORD");
+    String password =System.getenv("BASIC_ATH_PASSWORD");
 
     UserDetails user = User.withUsername(username)
       .password(encoder.encode(password))
