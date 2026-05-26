@@ -31,10 +31,13 @@ public class SecurityConfig {
   }
   @Bean
   public UserDetailsService userDetailsService(PasswordEncoder encoder){
-    UserDetails user = User.withUsername("admin")
-    .password(encoder.encode("2222"))
-    .roles("ADMIN")
-    .build();
+    String username = System.getenv("BASIC_AUTH_USER");
+    String password =System.getenv("BASIC_aUTH_PASSWORD");
+
+    UserDetails user = User.withUsername(username)
+      .password(encoder.encode(password))
+      .roles("ADMIN")
+      .build();
     return new InMemoryUserDetailsManager(user);
   }
 
@@ -44,3 +47,4 @@ public class SecurityConfig {
   }
   
 }
+;
